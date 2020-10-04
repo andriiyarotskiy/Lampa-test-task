@@ -10,7 +10,7 @@ export const Header = () => {
         <div className="header">
             <Link to="/">back to main</Link>
             <Link to="/basket">Basket</Link>
-            <span>total : {totalPrice && totalPrice + '$'}</span>
+            {totalPrice && <span>total : {totalPrice}$</span>}
         </div>
     )
 }

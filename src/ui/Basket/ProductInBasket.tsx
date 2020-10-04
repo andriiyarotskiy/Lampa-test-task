@@ -1,11 +1,9 @@
 import React from "react";
-import {useDispatch} from "react-redux";
 
 
 
 export const ProductInBasket = ({id, title, price, description, quantity, ...props}: any) => {
 
-    const dispatch = useDispatch()
 
     const decClickHandler = () => {
         props.onClickRemoveProduct(id)
