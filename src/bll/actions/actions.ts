@@ -6,7 +6,9 @@ export const Actions = createActions({
     totalPrice: () => {},
     addToBasket: (product) => ({product}),
     downQuantityInBasket: (id) => (id),
-    upQuantityInBasket: (id)=> (id),
-    setArrProductsToBasket: (products) => ({products})
+    upQuantityInBasket: (id) => (id),
+    setArrProductsToBasket: (products) => ({products}),
+    clearBasket: () => {
+    }
 });
 

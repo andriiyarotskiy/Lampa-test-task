@@ -1,6 +1,8 @@
 import React from "react";
 import {reduxForm, InjectedFormProps, Field, reset} from "redux-form";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {AppRootStateType} from "../../bll/store";
+import {sendOrderTC} from "../../bll/basketReducer";
 
 export let UserForm = (props: InjectedFormProps<any>) => {
 
@@ -36,15 +38,13 @@ export let UserForm = (props: InjectedFormProps<any>) => {
 const UserReduxForm = reduxForm<any>({form: 'userForm'})(UserForm)
 
 const FormBasket = () => {
+    const products = useSelector<AppRootStateType>(state => state.basketState.products)
     const dispatch = useDispatch()
 
-    const onSubmit = (formData: any) => {
-        console.log(formData)
-        dispatch(reset("userForm"));
+    const onSubmit = (formData: any) => { // Thunk which sends Data
+        dispatch(sendOrderTC(formData, products))
+        dispatch(reset("userForm"))
     }
-    // const onSubmit = () => {
-    //     dispatch(reset("userForm")); // string here is the name of the form, check the export default reduxForm below.
-    // };
 
     return (
         <div>
@@ -53,4 +53,5 @@ const FormBasket = () => {
     )
 }
 
-export default FormBasket
+
+export default FormBasket;

@@ -1,5 +1,7 @@
 import {handleActions} from "redux-actions";
 import {Actions} from "./actions/actions";
+import {fakeApi} from "../dal/api";
+import {Dispatch} from "redux";
 
 type ProductType = {
     description: string
@@ -59,9 +61,23 @@ export const basketReducer = handleActions({
         [`${Actions.setArrProductsToBasket}`]: (state, {payload: {products}}) => {
             return {...state, ...products}
         },
+        [`${Actions.clearBasket}`]: (state) => {
+            return {...state, products: [], total: null}
+        },
     },
     initialState)
 
 export default basketReducer;
 
-// THUNK FOR PRODUCT
+// THUNK FOR SEND PRODUCTS
+
+export const sendOrderTC = (formData: any, products: any) => async (dispatch: Dispatch) => {
+    try {
+        const userOrder = {...formData, products}
+        let response = await fakeApi.sendingAnOrder(userOrder)
+        alert(response)
+        dispatch(Actions.clearBasket())
+    } finally {
+
+    }
+}

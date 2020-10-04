@@ -10,10 +10,18 @@ export const fakeState = [
 
 export const fakeApi = {
     getProducts: () => {
-        return new Promise(function (res, rej) {
+        return new Promise((res, rej) => { // get
             setTimeout(() => {
                 return res(fakeState)
             }, 1000)
+        })
+    },
+    sendingAnOrder: (order: any) => {
+        return new Promise((res, rej) => { // post
+            setTimeout(() => {
+                console.log(order) // body
+                return res('Order accepted!, look in сonsole')
+            }, 2000)
         })
     }
 }
