@@ -4,15 +4,12 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../bll/store";
 import {fetchProductsTC} from "../../bll/mainReducer";
 import {Actions} from "../../bll/actions/actions";
-import {restoreState, saveState} from "../common/saveToLocalStorage";
 
-type StateLocalStorageType = {
-    productToStorage: string
-}
 
 export const Main = () => {
 
     const data = useSelector<AppRootStateType, any>(state => state.mainState)
+
     const dispatch = useDispatch()
 
     useEffect(() => {

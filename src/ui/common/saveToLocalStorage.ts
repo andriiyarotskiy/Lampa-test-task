@@ -1,3 +1,4 @@
+// Функция для сохранения
 export function saveState<T>(key: string, state: T) {
     const stateAsString = JSON.stringify(state);
     localStorage.setItem(key, stateAsString)
@@ -9,8 +10,3 @@ export function restoreState<T>(key: string, defaultState: T) {
     if (stateAsString !== null) defaultState = JSON.parse(stateAsString) as T;
     return defaultState;
 }
-
-// export function restoreState(key: string) {
-//     const stateAsString = localStorage.getItem(key);
-//     if (stateAsString !== null) return JSON.parse(stateAsString);
-// }

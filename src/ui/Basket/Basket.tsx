@@ -1,10 +1,10 @@
-import React from "react"
+import React, {useEffect} from "react"
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../bll/store";
 import {ProductInBasket} from "./ProductInBasket";
 import {ProductType} from "../Main/Product/Product";
 import {Actions} from "../../bll/actions/actions";
-import {saveState} from "../common/saveToLocalStorage";
+import {restoreState} from "../common/saveToLocalStorage";
 import FormBasket from "./UserForm";
 
 
@@ -13,7 +13,11 @@ export const Basket = () => {
 
     const dispatch = useDispatch()
 
-    saveState("productToStorage", products); // save to local storage
+    // Restore from local storage
+    useEffect(() => {
+        const productsToLocalStorage = restoreState("productToStorage", {products, total})
+        dispatch(Actions.setArrProductsToBasket(productsToLocalStorage))
+    }, [])
 
 
     const onClickRemoveProduct = (id: string) => {

@@ -15,14 +15,13 @@ export type initialStateType = {
 }
 
 
-let initialState: initialStateType = {
-    products: [],
+let initialState: any = {
+    products: [] as any,
     total: null
 }
 
 export const basketReducer = handleActions({
-
-        [Actions.addToBasket.toString()]: (state, {payload: {product}}: any) => {
+        [`${Actions.addToBasket}`]: (state, {payload: {product}}: any) => {
             let isHaveProduct = state.products.every((pr: any) => pr.id !== product.id)
             if (isHaveProduct) {
                 const addQuantity = {...product, quantity: 1}
@@ -35,13 +34,13 @@ export const basketReducer = handleActions({
             })
             return {...state, products: addQuantity}
         },
-        [Actions.totalPrice.toString()]: (state: any) => {
+        [`${Actions.totalPrice}`]: (state: any) => {
             let totalPrice = state.products.reduce((acc: number, el: any) => {
                 return acc += (el.price) * el.quantity
             }, null)
             return {...state, total: totalPrice}
         },
-        [Actions.downQuantityInBasket.toString()]: (state, {payload: id}) => { // <= working like a upQuantity case
+        [`${Actions.downQuantityInBasket}`]: (state, {payload: id}) => { // <= working like a upQuantity case
             return {
                 ...state, products: state.products.map((pr: any) => pr.id === id && pr.quantity > 0 ? {
                     ...pr,
@@ -49,7 +48,7 @@ export const basketReducer = handleActions({
                 } : pr).filter((el: any) => el.quantity > 0)
             }
         },
-        [Actions.upQuantityInBasket.toString()]: (state, {payload: id}) => {
+        [`${Actions.upQuantityInBasket}`]: (state, {payload: id}) => {
             let newProducts = state.products.map((pr: any) => pr.id === id && pr.quantity > 0 ? {
                 ...pr,
                 quantity: pr.quantity += 1
@@ -57,31 +56,12 @@ export const basketReducer = handleActions({
             let newArr = newProducts.filter((el: any) => el.quantity > 0)
             return {...state, products: newArr}
         },
+        [`${Actions.setArrProductsToBasket}`]: (state, {payload: {products}}) => {
+            return {...state, ...products}
+        },
     },
     initialState)
 
 export default basketReducer;
 
-
-// [addProducts.upQuantityInCart.toString()]: (state, id) => { // payload = {...}
-//     debugger
-//     let addProduct = state.products.filter((pr: any) => pr.id === id ? pr.quantity += 1 : pr)
-//     return {...state, products: addProduct}
-// },
-// [addProducts.downQuantityFromCart.toString()]: (state, id) => { // payload = {...}
-//     let removeProduct = state.products.filter((pr: any) => pr.id === id ? pr.quantity -= 1 : pr)
-//     return {...state, products: removeProduct}
-// },
-
-// [addProducts.addToBasket.toString()]: (state, {payload: {product, inCart}}) => {
-//     if (!inCart) {
-//         initialState.products.map((el: any) => {
-//             if (product.id === el.id) {
-//                 el.quantity += 1;
-//             }
-//         });
-//         initialState.inCart = true;
-//     }
-//     if (inCart) return;
-//     state.products.push(product)
-// },
+// THUNK FOR PRODUCT
