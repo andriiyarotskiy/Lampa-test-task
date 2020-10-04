@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {HashRouter, Link, Switch, Route} from "react-router-dom";
+import {HashRouter, Switch, Route} from "react-router-dom";
 import {Header} from "./ui/Header/Header";
 import {Basket} from "./ui/Basket/Basket";
 import {Main} from "./ui/Main/Main";
