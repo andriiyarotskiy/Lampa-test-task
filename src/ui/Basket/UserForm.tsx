@@ -3,6 +3,7 @@ import {reduxForm, InjectedFormProps, Field, reset} from "redux-form";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../bll/store";
 import {sendOrderTC} from "../../bll/basketReducer";
+import Button from "@material-ui/core/Button";
 
 export let UserForm = (props: InjectedFormProps<any>) => {
 
@@ -10,27 +11,29 @@ export let UserForm = (props: InjectedFormProps<any>) => {
         <form onSubmit={props.handleSubmit}>
             <div className="order_container">
 
-                <Field placeholder="firstName"
+                <Field placeholder="FIRST NAME"
                        name="firstName"
                        component="input"
                        type="text"
                 />
-                <Field placeholder="surName"
-                       name="surName"
+                <Field placeholder="LAST NAME"
+                       name="lastName"
                        component="input"
                        type="text"
                 />
-                <Field placeholder="address"
+                <Field placeholder="ADDRESS"
                        name="address"
                        component="input"
                        type="text"
                 />
-                <Field placeholder="phone"
+                <Field placeholder="PHONE"
                        name="phone"
                        component="input"
                        type="text"
                 />
-                <button type="submit">Order</button>
+                <Button
+                    variant="contained" color="primary"
+                    type="submit">Order</Button>
             </div>
         </form>
     )

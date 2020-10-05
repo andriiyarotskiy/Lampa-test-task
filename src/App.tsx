@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import './App.css';
-import {Switch, Route} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 import {Header} from "./ui/Header/Header";
 import {Basket} from "./ui/Basket/Basket";
 import {Main} from "./ui/Main/Main";
@@ -8,9 +8,18 @@ import {restoreState} from "./ui/common/saveToLocalStorage";
 import {Actions} from "./bll/actions/actions";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "./bll/store";
+import {Container, Paper} from "@material-ui/core";
+import {makeStyles} from "@material-ui/core/styles";
+
+const useStyles = makeStyles(() => ({
+    mainPost: {
+        paddingTop: 50
+    }
+}))
 
 
 export const App = () => {
+    const classes = useStyles()
 
     const {products, total} = useSelector<AppRootStateType, any>(state => state.basketState)
 
@@ -22,22 +31,26 @@ export const App = () => {
         dispatch(Actions.setArrProductsToBasket(productsToLocalStorage))
     }, [dispatch])
 
+
     return (
-
-        <div className="App">
+        <>
             <Header/>
-            <Switch>
-                <Route path="/basket">
-                    <Basket/>
-                </Route>
-                <Route exact path="/">
-                    <Main/>
-                </Route>
-            </Switch>
-        </div>
-
+            <main>
+                <Paper className={classes.mainPost}>
+                    <Container maxWidth="lg">
+                        <Switch>
+                            <Route path="/basket">
+                                <Basket/>
+                            </Route>
+                            <Route exact path="/">
+                                <Main/>
+                            </Route>
+                        </Switch>
+                    </Container>
+                </Paper>
+            </main>
+        </>
     )
-
 }
 
 export default App;

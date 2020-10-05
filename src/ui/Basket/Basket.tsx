@@ -5,6 +5,7 @@ import {ProductInBasket} from "./ProductInBasket";
 import {ProductType} from "../Main/Product/Product";
 import {Actions} from "../../bll/actions/actions";
 import FormBasket from "./UserForm";
+import {Paper, Typography} from "@material-ui/core";
 
 
 export const Basket = () => {
@@ -38,7 +39,7 @@ export const Basket = () => {
     })
 
     return (
-        <>
+        <Paper>
             <div className="basket_wrapper">
                 <div className="basket_container">
                     <div className="product_block">
@@ -50,8 +51,8 @@ export const Basket = () => {
                         <FormBasket/>
                     </div>
                 </div>
-                <span>Total : {total && total + "$"}</span>
+                <Typography>Total : {total && total + "$"}</Typography>
             </div>
-        </>
+        </Paper>
     )
 }

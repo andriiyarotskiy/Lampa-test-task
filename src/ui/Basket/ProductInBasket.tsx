@@ -1,5 +1,6 @@
 import React from "react";
-
+import Button from "@material-ui/core/Button";
+import {Paper} from "@material-ui/core";
 
 
 export const ProductInBasket = ({id, title, price, description, quantity, ...props}: any) => {
@@ -12,13 +13,13 @@ export const ProductInBasket = ({id, title, price, description, quantity, ...pro
         props.onClickAddProduct(id)
     }
     return (
-        <div className="product-item">
+        <Paper className="product-item">
             <span>{title}</span>
             <span>{price}</span>
             <span>{description}</span>
-            <button onClick={decClickHandler}>dec</button>
+            <Button variant="contained" color="primary" onClick={decClickHandler}>-</Button>
             <span>{quantity}</span>
-            <button onClick={incClickHandler}>inc</button>
-        </div>
+            <Button variant="contained" color="primary" onClick={incClickHandler}>+</Button>
+        </Paper>
     )
 }

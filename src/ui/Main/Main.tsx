@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../bll/store";
 import {fetchProductsTC} from "../../bll/mainReducer";
 import {Actions} from "../../bll/actions/actions";
+import {Grid} from "@material-ui/core";
 
 
 export const Main = () => {
@@ -24,19 +25,19 @@ export const Main = () => {
     }
 
     return (
-        <div className="main">
-            <div className="main_container">
-                {data.map((el: ProductType) => {
-                    return <Product
-                        key={el.id}
-                        title={el.title}
-                        description={el.description}
-                        price={el.price}
-                        id={el.id}
-                        onClickHandler={onClickHandler}
-                    />
-                })}
-            </div>
-        </div>
+        <Grid container spacing={6}>
+            {data.map((el: ProductType) => {
+                return <Product
+                    key={el.id}
+                    title={el.title}
+                    description={el.description}
+                    price={el.price}
+                    id={el.id}
+                    onClickHandler={onClickHandler}
+                    image={el.image}
+                />
+            })}
+
+        </Grid>
     )
 }
