@@ -8,7 +8,7 @@ import {restoreState} from "./ui/common/saveToLocalStorage";
 import {Actions} from "./bll/actions/actions";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "./bll/store";
-import {Container, Paper} from "@material-ui/core";
+import {Container} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles(() => ({
@@ -36,7 +36,7 @@ export const App = () => {
         <>
             <Header/>
             <main>
-                <Paper className={classes.mainPost}>
+                <div className={classes.mainPost}>
                     <Container maxWidth="lg">
                         <Switch>
                             <Route path="/basket">
@@ -47,7 +47,7 @@ export const App = () => {
                             </Route>
                         </Switch>
                     </Container>
-                </Paper>
+                </div>
             </main>
         </>
     )

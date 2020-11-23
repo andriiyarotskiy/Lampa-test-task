@@ -1,11 +1,18 @@
 import React from "react";
-import {reduxForm, InjectedFormProps, Field, reset} from "redux-form";
-import {useDispatch, useSelector} from "react-redux";
-import {AppRootStateType} from "../../bll/store";
+import {Field, InjectedFormProps, reduxForm, reset} from "redux-form";
+import {useDispatch} from "react-redux";
 import {sendOrderTC} from "../../bll/basketReducer";
 import Button from "@material-ui/core/Button";
 
-export let UserForm = (props: InjectedFormProps<any>) => {
+
+type UserFormType = {
+    firstName: string
+    lastName: string
+    address: string
+    phone: string
+}
+
+export const UserForm = (props: InjectedFormProps<UserFormType>) => {
 
     return (
         <form onSubmit={props.handleSubmit}>
@@ -38,14 +45,13 @@ export let UserForm = (props: InjectedFormProps<any>) => {
         </form>
     )
 }
-const UserReduxForm = reduxForm<any>({form: 'userForm'})(UserForm)
+const UserReduxForm = reduxForm<UserFormType>({form: 'userForm'})(UserForm)
 
 const FormBasket = () => {
-    const products = useSelector<AppRootStateType>(state => state.basketState.products)
     const dispatch = useDispatch()
 
-    const onSubmit = (formData: any) => { // Thunk which sends Data
-        dispatch(sendOrderTC(formData, products))
+    const onSubmit = (formData: UserFormType) => { // Thunk which sends Data
+        dispatch(sendOrderTC(formData))
         dispatch(reset("userForm"))
     }
 

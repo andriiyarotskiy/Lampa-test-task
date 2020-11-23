@@ -51,7 +51,7 @@ export const Basket = () => {
                         <FormBasket/>
                     </div>
                 </div>
-                <Typography>Total : {total && total + "$"}</Typography>
+                <Typography>Total : {total ? total + "$" : 0}</Typography>
             </div>
         </Paper>
     )

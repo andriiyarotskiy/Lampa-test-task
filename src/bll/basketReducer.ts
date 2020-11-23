@@ -2,6 +2,7 @@ import {handleActions} from "redux-actions";
 import {Actions} from "./actions/actions";
 import {fakeApi} from "../dal/api";
 import {Dispatch} from "redux";
+import {AppRootStateType} from "./store";
 
 type ProductType = {
     description: string
@@ -17,7 +18,7 @@ export type initialStateType = {
 }
 
 
-let initialState: any = {
+let initialState: initialStateType = {
     products: [] as any,
     total: null
 }
@@ -38,7 +39,7 @@ export const basketReducer = handleActions({
         },
         [`${Actions.totalPrice}`]: (state: any) => {
             let totalPrice = state.products.reduce((acc: number, el: any) => {
-                return acc += (el.price) * el.quantity
+                return acc += el.price * el.quantity
             }, null)
             return {...state, total: totalPrice}
         },
@@ -71,8 +72,9 @@ export default basketReducer;
 
 // THUNK FOR SEND PRODUCTS
 
-export const sendOrderTC = (formData: any, products: any) => async (dispatch: Dispatch) => {
+export const sendOrderTC = (formData: any) => async (dispatch: Dispatch, getState: () => AppRootStateType) => {
     try {
+        const {products} = getState().basketState
         const userOrder = {...formData, products}
         let response = await fakeApi.sendingAnOrder(userOrder)
         alert(response)
