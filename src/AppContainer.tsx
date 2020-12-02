@@ -4,7 +4,7 @@ import {saveState} from "./ui/common/saveToLocalStorage";
 import {useSelector} from "react-redux";
 import {AppRootStateType} from "./bll/store";
 import {App} from './App';
-import {BrowserRouter} from "react-router-dom";
+import {HashRouter} from "react-router-dom";
 
 const AppContainer = () => {
 
@@ -16,9 +16,9 @@ const AppContainer = () => {
     }, [products])
 
     return (
-        <BrowserRouter>
+        <HashRouter>
             <App/>
-        </BrowserRouter>
+        </HashRouter>
     )
 
 }

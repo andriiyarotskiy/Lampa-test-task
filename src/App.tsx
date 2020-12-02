@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import './App.css';
 import {Route, Switch} from "react-router-dom";
 import {Header} from "./ui/Header/Header";
@@ -25,14 +25,13 @@ export const App = () => {
     const productsWithTotal = useSelector<AppRootStateType, any>(selectProductsWithTotal)
     // const {products, total} = useSelector<AppRootStateType, any>(state => state.basketState)
 
-    console.log(productsWithTotal)
     const dispatch = useDispatch()
-
+    const productsToLocalStorage = useCallback(() =>
+        restoreState("productToStorage", productsWithTotal), [productsWithTotal])
     // Restore from local storage
     useEffect(() => {
-        const productsToLocalStorage = restoreState("productToStorage", productsWithTotal)
         dispatch(Actions.setArrProductsToBasket(productsToLocalStorage))
-    },[dispatch])
+    }, [dispatch, productsToLocalStorage])
 
 
     return (
@@ -42,11 +41,9 @@ export const App = () => {
                 <div className={classes.mainPost}>
                     <Container maxWidth="lg">
                         <Switch>
-                            <Route path="/basket">
-                                <Basket/>
+                            <Route exact path="/" render={() => <Main/>}>
                             </Route>
-                            <Route exact path="/">
-                                <Main/>
+                            <Route path="/basket" render={() => <Basket/>}>
                             </Route>
                         </Switch>
                     </Container>
