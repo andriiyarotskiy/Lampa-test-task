@@ -1,8 +1,9 @@
 import {applyMiddleware, combineReducers, createStore} from "redux";
-import basketReducer from "./basketReducer";
 import mainReducer from "./mainReducer";
+import basketReducer from "./basketReducer";
 import thunkMiddleware from "redux-thunk";
 import { reducer as formReducer } from 'redux-form'
+
 
 const rootReducer = combineReducers({
     mainState: mainReducer,

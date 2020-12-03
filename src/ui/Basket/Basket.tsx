@@ -3,9 +3,9 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../bll/store";
 import {ProductInBasket} from "./ProductInBasket";
 import {ProductType} from "../Main/Product/Product";
-import {Actions} from "../../bll/actions/actions";
 import FormBasket from "./UserForm";
 import {Paper, Typography} from "@material-ui/core";
+import {decQuantityProducts, incQuantityProducts, totalPrice} from "../../bll/actions/actions";
 
 
 export const Basket = () => {
@@ -16,13 +16,13 @@ export const Basket = () => {
 
     const onClickRemoveProduct = (id: string) => {
         let product = products.find((pr: ProductType) => pr.id === id)
-        dispatch(Actions.downQuantityInBasket(product.id))
-        dispatch(Actions.totalPrice())
+        dispatch(decQuantityProducts(product.id))
+        dispatch(totalPrice())
     }
     const onClickAddProduct = (id: string) => {
         let product = products.find((pr: ProductType) => pr.id === id)
-        dispatch(Actions.upQuantityInBasket(product.id))
-        dispatch(Actions.totalPrice())
+        dispatch(incQuantityProducts(product.id))
+        dispatch(totalPrice())
     }
 
     const productsInCart = products.map((pr: ProductType) => {

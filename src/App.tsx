@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 import {Route, Switch} from "react-router-dom";
 import {Header} from "./ui/Header/Header";
@@ -8,9 +8,9 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "./bll/store";
 import {Container} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
-import {selectProductsWithTotal} from './bll/selectors/re-select';
 import {restoreState} from "./ui/common/saveToLocalStorage";
-import {Actions} from "./bll/actions/actions";
+import {setProductsToBasket} from "./bll/actions/actions";
+import {selectProductsWithTotal} from './bll/selectors/re-select';
 
 const useStyles = makeStyles(() => ({
     mainPost: {
@@ -22,16 +22,18 @@ const useStyles = makeStyles(() => ({
 export const App = () => {
     const classes = useStyles()
 
-    const productsWithTotal = useSelector<AppRootStateType, any>(selectProductsWithTotal)
-    // const {products, total} = useSelector<AppRootStateType, any>(state => state.basketState)
 
+    const productsWithTotal  = useSelector<AppRootStateType, any>(selectProductsWithTotal)
     const dispatch = useDispatch()
-    const productsToLocalStorage = useCallback(() =>
-        restoreState("productToStorage", productsWithTotal), [productsWithTotal])
+
+
+    const productsToLocalStorage = restoreState("productToStorage", productsWithTotal)
     // Restore from local storage
+
+
     useEffect(() => {
-        dispatch(Actions.setArrProductsToBasket(productsToLocalStorage))
-    }, [dispatch, productsToLocalStorage])
+        dispatch(setProductsToBasket(productsToLocalStorage))
+    }, [dispatch])
 
 
     return (

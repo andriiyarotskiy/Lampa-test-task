@@ -2,7 +2,6 @@ import { createSelector } from 'reselect'
 import {AppRootStateType} from "../store";
 
 export const products = (state: AppRootStateType) => state.basketState.products
-export const total = (state: AppRootStateType) => state.basketState.total
 
 
 export const selectorTotalPrice = createSelector(

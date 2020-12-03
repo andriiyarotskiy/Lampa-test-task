@@ -3,8 +3,8 @@ import {Product, ProductType} from "./Product/Product";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../bll/store";
 import {fetchProductsTC} from "../../bll/mainReducer";
-import {Actions} from "../../bll/actions/actions";
 import {Grid} from "@material-ui/core";
+import {addToBasket, totalPrice} from "../../bll/actions/actions";
 
 
 export const Main = () => {
@@ -20,8 +20,8 @@ export const Main = () => {
 
     const onClickHandler = (id: string) => {
         let product = data.find((pr: ProductType) => pr.id === id)
-        dispatch(Actions.addToBasket({...product, quantity: 1}))
-        dispatch(Actions.totalPrice())
+        dispatch(addToBasket({...product, quantity: 1}))
+        dispatch(totalPrice())
     }
 
     return (
