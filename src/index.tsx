@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from "react-redux";
 import {store} from "./bll/store";
-import AppContainer from './AppContainer';
+import AppWrapper from './AppWrapper';
+import "./assets/normalize.css"
 
 ReactDOM.render(
     <Provider store={store}>
-        <AppContainer/>
+        <AppWrapper/>
     </Provider>,
     document.getElementById('root')
 );

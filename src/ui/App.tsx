@@ -1,29 +1,21 @@
 import React, {useEffect} from 'react';
-import './App.css';
+import '../App.css';
 import {Route, Switch} from "react-router-dom";
-import {Header} from "./ui/Header/Header";
-import {Basket} from "./ui/Basket/Basket";
-import {Main} from "./ui/Main/Main";
+import {Header} from "./Header/Header";
+import {Basket} from "./Basket/Basket";
+import {Main} from "./Main/Main";
 import {useDispatch, useSelector} from "react-redux";
-import {AppRootStateType} from "./bll/store";
-import {Container} from "@material-ui/core";
-import {makeStyles} from "@material-ui/core/styles";
-import {restoreState} from "./ui/common/saveToLocalStorage";
-import {setProductsToBasket} from "./bll/actions/actions";
-import {selectProductsWithTotal} from './bll/selectors/re-select';
-
-const useStyles = makeStyles(() => ({
-    mainPost: {
-        paddingTop: 50
-    }
-}))
+import {AppRootStateType} from "../bll/store";
+import {restoreState} from "./common/saveToLocalStorage";
+import {setProductsToBasket} from "../bll/actions/actions";
+import {selectProductsWithTotal} from '../bll/selectors/re-select';
+import style from "./App.module.scss"
 
 
 export const App = () => {
-    const classes = useStyles()
 
 
-    const productsWithTotal  = useSelector<AppRootStateType, any>(selectProductsWithTotal)
+    const productsWithTotal = useSelector<AppRootStateType, any>(selectProductsWithTotal)
     const dispatch = useDispatch()
 
 
@@ -37,21 +29,19 @@ export const App = () => {
 
 
     return (
-        <>
+        <div className={`${style.app} ${style.appContainer}`}>
             <Header/>
             <main>
-                <div className={classes.mainPost}>
-                    <Container maxWidth="lg">
+                <div>
                         <Switch>
                             <Route exact path="/" render={() => <Main/>}>
                             </Route>
                             <Route path="/basket" render={() => <Basket/>}>
                             </Route>
                         </Switch>
-                    </Container>
                 </div>
             </main>
-        </>
+        </div>
     )
 }
 

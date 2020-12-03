@@ -2,42 +2,48 @@ import React from "react"
 import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {AppRootStateType} from "../../bll/store";
-import {AppBar, Box, Button, IconButton, makeStyles, Toolbar, Typography} from "@material-ui/core";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import style from "./Header.module.scss"
+import logo from "../../assets/images/logo_watch.png"
+import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: "flex",
-        alignContent: "flex-end"
-    },
-    menuButton: {
-        marginRight: theme.spacing(1)
-    },
-}))
 
 export const Header = () => {
 
-    const classes = useStyles()
-
     const totalPrice = useSelector<AppRootStateType, number | null>(state => state.basketState.total)
     return (
-        <AppBar position="static">
-            <Toolbar>
-                <Box mr={3}>
+        <div className={style.header}>
+            <div className={style.header_login}>
+                <div className={style.logo}>
+                    <div className={style.logo_img}>
+                        <img src={logo} alt=""/>
+                    </div>
                     <Link to="/">
-                        <Button color="inherit" variant="outlined" className={classes.menuButton}>Main</Button>
+                        <span>WatchZone</span>
                     </Link>
-                </Box>
-                <Box mr={3}>
-                    <Link to="/basket">
-                        <IconButton edge="end" color="inherit">
-                            <ShoppingCartIcon fontSize="large"/>
-                        </IconButton>
-                    </Link>
-                </Box>
-                {totalPrice && <Typography variant="h6">Total : {totalPrice}$</Typography>}
-            </Toolbar>
-        </AppBar>
+                </div>
+                <a className={style.signIn}>SIGN IN</a>
+            </div>
+            <div className={style.header_navbar__wrap}>
+                <div className={style.container_navbar}>
+                    <div className={style.header_title}>
+                        <span>Smart Watch Brands</span>
+                        <span className={style.text_sale}>Sale</span>
+                        <span className={style.icon_home}>
+                             <Link to="/">
+                            <HomeRoundedIcon fontSize={"large"}/>
+                             </Link>
+                        </span>
+                    </div>
+
+                    <div className={style.header_cart}>
+                        {totalPrice && <span className={style.total}>{totalPrice}$</span>}
+                        <Link to="/basket">
+                            <ShoppingCartIcon  fontSize={"large"}/>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </div>
     )
 }

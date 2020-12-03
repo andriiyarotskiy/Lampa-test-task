@@ -3,10 +3,10 @@ import './App.css';
 import {saveState} from "./ui/common/saveToLocalStorage";
 import {useSelector} from "react-redux";
 import {AppRootStateType} from "./bll/store";
-import {App} from './App';
+import {App} from './ui/App';
 import {HashRouter} from "react-router-dom";
 
-const AppContainer = () => {
+const AppWrapper = () => {
 
     const products = useSelector<AppRootStateType, any>(state => state.basketState)
 
@@ -23,4 +23,4 @@ const AppContainer = () => {
 
 }
 
-export default AppContainer;
+export default AppWrapper;

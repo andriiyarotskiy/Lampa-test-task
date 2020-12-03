@@ -3,7 +3,6 @@ import {Product, ProductType} from "./Product/Product";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../bll/store";
 import {fetchProductsTC} from "../../bll/mainReducer";
-import {Grid} from "@material-ui/core";
 import {addToBasket, totalPrice} from "../../bll/actions/actions";
 
 
@@ -25,8 +24,8 @@ export const Main = () => {
     }
 
     return (
-        <Grid container spacing={6}>
-            {data.map((el: ProductType) => {
+        <div>
+   {/*         {data.map((el: ProductType) => {
                 return <Product
                     key={el.id}
                     title={el.title}
@@ -36,8 +35,8 @@ export const Main = () => {
                     onClickHandler={onClickHandler}
                     image={el.image}
                 />
-            })}
+            })}*/}
 
-        </Grid>
+        </div>
     )
 }

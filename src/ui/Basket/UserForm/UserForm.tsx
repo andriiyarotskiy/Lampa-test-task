@@ -1,7 +1,7 @@
 import React from "react";
 import {Field, InjectedFormProps, reduxForm, reset} from "redux-form";
 import {useDispatch} from "react-redux";
-import {sendOrderTC} from "../../bll/basketReducer";
+import {sendOrderTC} from "../../../bll/basketReducer";
 import Button from "@material-ui/core/Button";
 
 

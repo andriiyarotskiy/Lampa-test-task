@@ -1,11 +1,11 @@
 import React from "react"
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../bll/store";
-import {ProductInBasket} from "./ProductInBasket";
 import {ProductType} from "../Main/Product/Product";
-import FormBasket from "./UserForm";
+import FormBasket from "./UserForm/UserForm";
 import {Paper, Typography} from "@material-ui/core";
 import {decQuantityProducts, incQuantityProducts, totalPrice} from "../../bll/actions/actions";
+import {ProductInBasket} from "./ProductInBasket/ProductInBasket";
 
 
 export const Basket = () => {
