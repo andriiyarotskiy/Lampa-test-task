@@ -22,7 +22,7 @@ export const Header = () => {
                         <span>WatchZone</span>
                     </Link>
                 </div>
-                <a className={style.signIn}>SIGN IN</a>
+                <Link to={""} className={style.signIn}>SIGN IN</Link>
             </div>
             <div className={style.header_navbar__wrap}>
                 <div className={style.container_navbar}>

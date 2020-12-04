@@ -2,7 +2,6 @@ import React from "react";
 import style from "./Product.module.scss";
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import se from "../../../assets/images/products/SE.svg";
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Button from "../../common/Button/Button";
 
 
