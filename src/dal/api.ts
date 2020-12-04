@@ -8,7 +8,7 @@ export const fakeState = [
     },
     {
         title: 'CSS',
-        description: "Lorem ipsum dolor sit amet.",
+        description: "Waterproof Sport Smart Watch Monitor for IOS and Android",
         price: 30,
         id: '2',
         image: "https://source.unsplash.com/random"
@@ -39,6 +39,13 @@ export const fakeState = [
         description: "Lorem ipsum dolor sit amet.",
         price: 200,
         id: '6',
+        image: "https://source.unsplash.com/random"
+    },
+    {
+        title: 'Smart Watches',
+        description: "Waterproof Sport Smart Watch Monitor for IOS and Android",
+        price: 300,
+        id: '7',
         image: "https://source.unsplash.com/random"
     },
 ]

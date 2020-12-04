@@ -8,9 +8,8 @@ a {
 
 .appContainer {
   max-width: 1200px;
-  //padding: 0 15px 0 15px;
+  overflow: hidden;
   margin: 0 auto;
-  //border: 1px  solid black;
   @media (max-width: 1200px) {
     padding: 0;
   }

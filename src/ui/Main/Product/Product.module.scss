@@ -1,12 +1,14 @@
 
 .card {
+  position: relative;
   background: rgba(196, 196, 196, 0.4);
   display: inline-block;
   padding: 30px;
   width: 300px;
+  min-height: 540px;
+  height: auto;
   border-radius: 15px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-
   font-family: 'Padauk', sans-serif;
 }
 
@@ -66,7 +68,10 @@
 }
 
 .card .footer {
+  position: absolute;
+  bottom: 30px;
   display: flex;
-  justify-content: space-between;
   margin-top: 30px;
+  width: 240px;
+  justify-content: space-between;
 }

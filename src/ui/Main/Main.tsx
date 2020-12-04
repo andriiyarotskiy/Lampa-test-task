@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../bll/store";
 import {fetchProductsTC} from "../../bll/mainReducer";
 import {addToBasket, totalPrice} from "../../bll/actions/actions";
+import style from "./Main.module.scss"
 
 
 export const Main = () => {
@@ -24,17 +25,18 @@ export const Main = () => {
     }
 
     return (
-        <div>
+        <div className={style.container}>
             {data.map((el: ProductType) => {
-                return <Product
-                    key={el.id}
+                return <div className={style.itemBox}
+                    key={el.id}>
+                    <Product
                     title={el.title}
                     description={el.description}
                     price={el.price}
                     id={el.id}
                     onClickHandler={onClickHandler}
-                    image={el.image}
-                />
+                    image={el.image}/>
+                </div>
             })}
         </div>
     )
