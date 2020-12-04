@@ -1,15 +1,9 @@
-import {
-    Button,
-    Card,
-    CardActionArea,
-    CardActions,
-    CardContent,
-    CardMedia,
-    Grid,
-    makeStyles,
-    Typography
-} from "@material-ui/core"
-import React from "react"
+import React from "react";
+import style from "./Product.module.scss";
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import se from "../../../assets/images/products/SE.svg";
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import Button from "../../common/Button/Button";
 
 
 export type ProductType = {
@@ -28,25 +22,40 @@ export const Product = ({title, description, price, image, ...props}: ProductTyp
     }
 
     return (
-        <div>
-            <div>
-                <div>
-                    <div>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            {price}
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                            {description}
-                        </Typography>
+        <div className={style.container}>
+            <div className={style.card}>
+                <div className={style.head}>
+                    <div className={style.likes}>
+                        <FavoriteIcon className={style.ion_md_heart}/>
+                        <p>212</p>
+                    </div>
+                    <div className={style.discount}>
+                        <button>30% off</button>
                     </div>
                 </div>
-                <div>
-                    <Button onClick={onClickHandler}
-                            size="medium"
-                            color="primary"
-                            variant="contained">
-                        Buy
-                    </Button>
+                <div className={style.product}>
+                    <img src={se} alt="se" height="190"/>
+                </div>
+                <div className={style.text}>
+                    <div className={style.title}>
+                        <h4>{price}$</h4>
+                        <h3>{title}</h3>
+                        <p>{description}</p>
+                    </div>
+                </div>
+                <div className={style.footer}>
+                    <div className={style.action}>
+                        <Button name={"Buy Now"}
+                                onClick={onClickHandler}
+                                variant={"contained"}
+                        />
+                    </div>
+                    <div className={style.cart}>
+                        <Button name={"Add to cart"}
+                                onClick={()=>{}}
+                                variant={"outlined"}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

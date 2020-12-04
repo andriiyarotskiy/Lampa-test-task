@@ -25,7 +25,7 @@ export const Main = () => {
 
     return (
         <div>
-   {/*         {data.map((el: ProductType) => {
+            {data.map((el: ProductType) => {
                 return <Product
                     key={el.id}
                     title={el.title}
@@ -35,8 +35,7 @@ export const Main = () => {
                     onClickHandler={onClickHandler}
                     image={el.image}
                 />
-            })}*/}
-
+            })}
         </div>
     )
 }

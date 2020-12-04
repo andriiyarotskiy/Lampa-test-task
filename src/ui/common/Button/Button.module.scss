@@ -1,0 +1,29 @@
+$btn-color : rgba(111, 207, 151, 0.7);
+
+button {
+  border: 3px solid transparent;
+  outline: none;
+  padding: 10px 15px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contained {
+  background: $btn-color;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.6);
+    background: #fff;
+    border: 3px solid $btn-color;
+  }
+}
+
+.outlined {
+  background: transparent;
+  color: #808080;
+
+  &:hover {
+    border: 3px solid $btn-color;
+  }
+}

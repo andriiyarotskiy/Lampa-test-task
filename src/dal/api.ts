@@ -1,7 +1,7 @@
 export const fakeState = [
     {
-        title: 'HTML',
-        description: "Lorem ipsum dolor sit amet.",
+        title: 'Smart Watches',
+        description: "Waterproof Sport Smart Watch Monitor for IOS and Android",
         price: 20,
         id: '1',
         image: "https://source.unsplash.com/random"
