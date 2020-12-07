@@ -65,6 +65,9 @@ const basketReducer = (state: initialStateType = initialState, action: BasketAct
         case 'basket/CLEAR-BASKET': {
             return {...state, products: [], total: null}
         }
+        case "basket/REMOVE-SINGLE-PRODUCTS": {
+            return {...state, products: state.products.filter(p => p.id !== action.id)}
+        }
         default :
             return state
     }

@@ -10,7 +10,7 @@ export const addToBasket = (product: any) => {
 export const decQuantityProducts = (id: any) => {
     return {type: "basket/DEC-QUANTITY-PRODUCTS", id} as const
 }
-export const incQuantityProducts = (id: any) => {
+export const incQuantityProducts = (id: string) => {
     return {type: "basket/INC-QUANTITY-PRODUCTS", id} as const
 }
 export const setProductsToBasket = (products: any) => {
@@ -19,6 +19,9 @@ export const setProductsToBasket = (products: any) => {
 export const clearBasket = () => {
     return {type: "basket/CLEAR-BASKET"} as const
 }
+export const removeSingleProducts = (id: string) => {
+    return {type: "basket/REMOVE-SINGLE-PRODUCTS", id} as const
+}
 
 export type BasketActionsTypes =
     ReturnType<typeof totalPrice> |
@@ -26,7 +29,9 @@ export type BasketActionsTypes =
     ReturnType<typeof decQuantityProducts> |
     ReturnType<typeof incQuantityProducts> |
     ReturnType<typeof setProductsToBasket> |
-    ReturnType<typeof clearBasket>
+    ReturnType<typeof clearBasket> |
+    ReturnType<typeof removeSingleProducts>
+
 
 export type MainActionsTypes =
     ReturnType<typeof setProducts>

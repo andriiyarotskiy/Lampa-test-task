@@ -1,7 +1,6 @@
 import React from "react";
 import style from "./Product.module.scss";
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import se from "../../../assets/images/products/SE.svg";
 import Button from "../../common/Button/Button";
 
 
@@ -33,7 +32,7 @@ export const Product = ({title, description, price, image, ...props}: ProductTyp
                     </div>
                 </div>
                 <div className={style.product}>
-                    <img src={se} alt="se" height="190"/>
+                    <img src={image} alt="se"/>
                 </div>
                 <div className={style.text}>
                     <div className={style.title}>

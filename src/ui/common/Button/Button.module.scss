@@ -1,4 +1,4 @@
-$btn-color : rgba(111, 207, 151, 0.7);
+$btn-color-green : rgba(111, 207, 151, 0.7);
 
 button {
   border: 3px solid transparent;
@@ -10,12 +10,12 @@ button {
 }
 
 .contained {
-  background: $btn-color;
+  background: $btn-color-green;
 
   &:hover {
     color: rgba(0, 0, 0, 0.6);
     background: #fff;
-    border: 3px solid $btn-color;
+    border: 3px solid $btn-color-green;
   }
 }
 
@@ -24,6 +24,6 @@ button {
   color: #808080;
 
   &:hover {
-    border: 3px solid $btn-color;
+    border: 3px solid $btn-color-green;
   }
 }
