@@ -10,7 +10,6 @@ import style from "./Basket.module.scss"
 
 export const Basket = () => {
     const {products, total} = useSelector<AppRootStateType, any>(state => state.basketState)
-    // const singleTotalPrice = useSelector<any>(singleTotal)
 
     const dispatch = useDispatch()
 
@@ -25,10 +24,11 @@ export const Basket = () => {
         dispatch(incQuantityProducts(product.id))
         dispatch(totalPrice())
     }
-
+    // Delete Single Products from Cart
     const removeFromCart = (id: string) => {
-       dispatch(removeSingleProducts(id))
+        dispatch(removeSingleProducts(id))
     }
+
 
     const productsInCart = products.map((pr: ProductType) => {
         return <ProductInCart
@@ -37,36 +37,36 @@ export const Basket = () => {
             description={pr.description}
             price={pr.price}
             id={pr.id}
+            image={pr.image}
             quantity={pr.quantity}
             onClickRemoveProduct={onClickRemoveProduct}
             onClickAddProduct={onClickAddProduct}
             removeFromCart={removeFromCart}
-            // singleTotalPrice={singleTotalPrice}
         />
     })
-
-    // Delete Single Products from Cart
 
 
     return (
         <div className={style.basket}>
             <div className={style.products_list}>
+                {(productsInCart.length > 0) &&
                 <div className={style.cartTitles}>
                     <span className={style.productTitle}>Product</span>
-                    <div>
+                    <div className={style.priceText}>
                         <span>Price</span>
-                        <span>QTY</span>
+                        <span className={style.qtyText}>QTY</span>
                         <span>Unit Price</span>
                     </div>
-                </div>
+                </div>}
+                {productsInCart}
                 {(productsInCart.length > 0)
-                    ? productsInCart
-                    : <span>Clear</span>}
+                && <div className={style.totalContainer}>
+                    <span>Total</span>
+                    <span>${total}</span></div>}
             </div>
             <div className={style.order_form}>
                 <FormBasket/>
             </div>
-
         </div>
     )
 }

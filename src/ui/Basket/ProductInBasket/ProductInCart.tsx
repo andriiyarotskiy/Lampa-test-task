@@ -19,7 +19,7 @@ export const ProductInCart = ({id, title, price, description, quantity, ...props
                  onClick={removeSingleProducts}
             ></div>
             <div className={style.item}>
-                <img src="https://source.unsplash.com/random" alt="product_img" width="140" height="95"/>
+                <img src={`http://localhost:3000${props.image}`} alt="product_img" width="140" height="95"/>
                 <span>{title}</span>
             </div>
             <div className={style.wrapperPrices}>
@@ -38,12 +38,3 @@ export const ProductInCart = ({id, title, price, description, quantity, ...props
         </div>
     )
 }
-
-
-/*
-<span>{title}</span>
-<h1>{price}</h1>
-{/!*<span>{description}</span>*!/}
-<Button variant="contained" onClick={decClickHandler} name={"-"}/>
-<span>{quantity}</span>
-<Button variant="contained" onClick={incClickHandler} name={"+"}/>*/

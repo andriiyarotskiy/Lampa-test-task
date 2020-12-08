@@ -3,8 +3,17 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 25px;
+  position: relative;
 
   font-family: 'Roboto', sans-serif;
+  &:before{
+    content: '';
+    position: absolute;
+    width: calc(100% - 25px* 2);
+    top: 0;
+    height: 1px;
+    background: rgba(0,0,0,0.2);
+  }
 }
 
 .removeBtn {
@@ -46,12 +55,14 @@
 
   img {
     margin: 0 15px 0 15px;
+    border-radius: 10px;
+    background: rgb(239, 239, 239);
+    padding: 10px 0;
   }
 }
 
 
 .wrapperPrices {
-  //background: burlywood;
   width: 40%;
   display: flex;
   justify-content: space-between;
@@ -61,7 +72,6 @@
 .priceBox {
   text-align: center;
   width: 30%;
-  //background: grey;
 }
 
 .qtyBox {
