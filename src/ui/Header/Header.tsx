@@ -14,7 +14,7 @@ export const Header = () => {
     return (
         <div className={style.header}>
             <div className={style.header_login}>
-                <div className={style.logo}>
+                <div className={style.logoContainer}>
                     <div className={style.logo_img}>
                         <img src={logo} alt=""/>
                     </div>
@@ -26,7 +26,7 @@ export const Header = () => {
             </div>
             <div className={style.header_navbar__wrap}>
                 <div className={style.container_navbar}>
-                    <div className={style.header_title}>
+                    <div className={style.header_titles}>
                         <span>Smart Watch Brands</span>
                         <span className={style.text_sale}>Sale</span>
                         <span className={style.icon_home}>

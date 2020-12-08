@@ -64,8 +64,10 @@ export const Basket = () => {
                     <span>Total</span>
                     <span>${total}</span></div>}
             </div>
-            <div className={style.order_form}>
-                <FormBasket/>
+            <div className={style.wrapForm}>
+                <div className={style.order_form}>
+                    <FormBasket/>
+                </div>
             </div>
         </div>
     )

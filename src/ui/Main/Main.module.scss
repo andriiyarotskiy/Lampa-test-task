@@ -5,7 +5,17 @@
   justify-content: space-between;
   margin-top: 30px;
 }
+
 .itemBox {
   margin-bottom: 60px;
   flex: 0 1 300px;
+}
+
+@media (max-width: 687px) {
+  .itemBox {
+    margin: 0 auto 60px auto;
+    display: block;
+    flex: 0 1 100%;
+    //padding: 0 5px;
+  }
 }
