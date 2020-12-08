@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../bll/store";
 import {ProductType} from "../Main/Product/Product";
@@ -13,7 +13,6 @@ export const Basket = () => {
 
     const dispatch = useDispatch()
 
-
     const onClickRemoveProduct = (id: string) => {
         let product = products.find((pr: ProductType) => pr.id === id)
         dispatch(decQuantityProducts(product.id))
@@ -27,6 +26,7 @@ export const Basket = () => {
     // Delete Single Products from Cart
     const removeFromCart = (id: string) => {
         dispatch(removeSingleProducts(id))
+        dispatch(totalPrice())
     }
 
 
