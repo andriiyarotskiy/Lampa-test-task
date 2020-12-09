@@ -1,22 +1,29 @@
 {
   "files": {
-    "main.css": "/mini-shop/static/css/main.5ee64157.chunk.css",
-    "main.js": "/mini-shop/static/js/main.765d240c.chunk.js",
-    "main.js.map": "/mini-shop/static/js/main.765d240c.chunk.js.map",
+    "main.css": "/mini-shop/static/css/main.fe78361a.chunk.css",
+    "main.js": "/mini-shop/static/js/main.98ee1887.chunk.js",
+    "main.js.map": "/mini-shop/static/js/main.98ee1887.chunk.js.map",
     "runtime-main.js": "/mini-shop/static/js/runtime-main.b4a5d8b1.js",
     "runtime-main.js.map": "/mini-shop/static/js/runtime-main.b4a5d8b1.js.map",
-    "static/js/2.e8015731.chunk.js": "/mini-shop/static/js/2.e8015731.chunk.js",
-    "static/js/2.e8015731.chunk.js.map": "/mini-shop/static/js/2.e8015731.chunk.js.map",
+    "static/js/2.a9f4df9a.chunk.js": "/mini-shop/static/js/2.a9f4df9a.chunk.js",
+    "static/js/2.a9f4df9a.chunk.js.map": "/mini-shop/static/js/2.a9f4df9a.chunk.js.map",
     "index.html": "/mini-shop/index.html",
-    "precache-manifest.97689e5a2df76541ee313002bb6631b1.js": "/mini-shop/precache-manifest.97689e5a2df76541ee313002bb6631b1.js",
+    "precache-manifest.750f833e7cbc7b03b1fc770e51030c1f.js": "/mini-shop/precache-manifest.750f833e7cbc7b03b1fc770e51030c1f.js",
     "service-worker.js": "/mini-shop/service-worker.js",
-    "static/css/main.5ee64157.chunk.css.map": "/mini-shop/static/css/main.5ee64157.chunk.css.map",
-    "static/js/2.e8015731.chunk.js.LICENSE.txt": "/mini-shop/static/js/2.e8015731.chunk.js.LICENSE.txt"
+    "static/css/main.fe78361a.chunk.css.map": "/mini-shop/static/css/main.fe78361a.chunk.css.map",
+    "static/js/2.a9f4df9a.chunk.js.LICENSE.txt": "/mini-shop/static/js/2.a9f4df9a.chunk.js.LICENSE.txt",
+    "static/media/Clorfit Nav.svg": "/mini-shop/static/media/Clorfit Nav.14b95cb6.svg",
+    "static/media/SE.svg": "/mini-shop/static/media/SE.7099b817.svg",
+    "static/media/i3-removebg-preview 1.svg": "/mini-shop/static/media/i3-removebg-preview 1.277e5060.svg",
+    "static/media/noise fit.svg": "/mini-shop/static/media/noise fit.47fe154e.svg",
+    "static/media/noise pro 2.svg": "/mini-shop/static/media/noise pro 2.771c5a1b.svg",
+    "static/media/series 6.svg": "/mini-shop/static/media/series 6.258af659.svg",
+    "static/media/warning_icon.svg": "/mini-shop/static/media/warning_icon.a8b3746d.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.b4a5d8b1.js",
-    "static/js/2.e8015731.chunk.js",
-    "static/css/main.5ee64157.chunk.css",
-    "static/js/main.765d240c.chunk.js"
+    "static/js/2.a9f4df9a.chunk.js",
+    "static/css/main.fe78361a.chunk.css",
+    "static/js/main.98ee1887.chunk.js"
   ]
 }
