@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5d68b3803a086f3bc5ff6c1b965a81e0",
+    "revision": "f8709ecef0fc5831e5fab126523fead2",
     "url": "/mini-shop/index.html"
   },
   {
-    "revision": "a3db9b41ef553716e0db",
+    "revision": "7ddf4b7b4242efc43c84",
     "url": "/mini-shop/static/css/main.4f8f58be.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mini-shop/static/js/2.a9f4df9a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a3db9b41ef553716e0db",
-    "url": "/mini-shop/static/js/main.98ee1887.chunk.js"
+    "revision": "7ddf4b7b4242efc43c84",
+    "url": "/mini-shop/static/js/main.3c3d7b6b.chunk.js"
   },
   {
     "revision": "bc498b52d8c19dc88b87",
