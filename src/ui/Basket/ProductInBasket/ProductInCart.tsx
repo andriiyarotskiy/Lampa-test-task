@@ -13,13 +13,15 @@ export const ProductInCart = ({id, title, price, description, quantity, ...props
     const removeSingleProducts = () => {
         props.removeFromCart(id)
     }
+
+    const imageUrl = `https://andriiyarotskiy.github.io${props.image}`
     return (
         <div className={style.productItem}>
             <div className={style.removeBtn}
                  onClick={removeSingleProducts}
             ></div>
             <div className={style.item}>
-                <img src={`http://localhost:3000${props.image}`} alt="product_img" width="140" height="95"/>
+                <img src={imageUrl} alt="product_img" width="140" height="95"/>
                 <span>{title}</span>
             </div>
             <div className={style.wrapperPrices}>
