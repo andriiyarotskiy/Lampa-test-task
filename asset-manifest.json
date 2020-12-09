@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/mini-shop/static/css/main.fe78361a.chunk.css",
+    "main.css": "/mini-shop/static/css/main.4f8f58be.chunk.css",
     "main.js": "/mini-shop/static/js/main.98ee1887.chunk.js",
     "main.js.map": "/mini-shop/static/js/main.98ee1887.chunk.js.map",
     "runtime-main.js": "/mini-shop/static/js/runtime-main.b4a5d8b1.js",
@@ -8,9 +8,9 @@
     "static/js/2.a9f4df9a.chunk.js": "/mini-shop/static/js/2.a9f4df9a.chunk.js",
     "static/js/2.a9f4df9a.chunk.js.map": "/mini-shop/static/js/2.a9f4df9a.chunk.js.map",
     "index.html": "/mini-shop/index.html",
-    "precache-manifest.750f833e7cbc7b03b1fc770e51030c1f.js": "/mini-shop/precache-manifest.750f833e7cbc7b03b1fc770e51030c1f.js",
+    "precache-manifest.26a9d39d3e51603725557946c631bffd.js": "/mini-shop/precache-manifest.26a9d39d3e51603725557946c631bffd.js",
     "service-worker.js": "/mini-shop/service-worker.js",
-    "static/css/main.fe78361a.chunk.css.map": "/mini-shop/static/css/main.fe78361a.chunk.css.map",
+    "static/css/main.4f8f58be.chunk.css.map": "/mini-shop/static/css/main.4f8f58be.chunk.css.map",
     "static/js/2.a9f4df9a.chunk.js.LICENSE.txt": "/mini-shop/static/js/2.a9f4df9a.chunk.js.LICENSE.txt",
     "static/media/Clorfit Nav.svg": "/mini-shop/static/media/Clorfit Nav.14b95cb6.svg",
     "static/media/SE.svg": "/mini-shop/static/media/SE.7099b817.svg",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.b4a5d8b1.js",
     "static/js/2.a9f4df9a.chunk.js",
-    "static/css/main.fe78361a.chunk.css",
+    "static/css/main.4f8f58be.chunk.css",
     "static/js/main.98ee1887.chunk.js"
   ]
 }
