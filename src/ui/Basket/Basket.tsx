@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React from "react"
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../bll/store";
 import {ProductType} from "../Main/Product/Product";
@@ -6,7 +6,6 @@ import FormBasket from "./UserForm/UserForm";
 import {decQuantityProducts, incQuantityProducts, removeSingleProducts, totalPrice} from "../../bll/actions/actions";
 import {ProductInCart} from "./ProductInBasket/ProductInCart";
 import style from "./Basket.module.scss"
-
 
 export const Basket = () => {
     const {products, total} = useSelector<AppRootStateType, any>(state => state.basketState)

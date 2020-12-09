@@ -44,13 +44,13 @@ export const Product = ({title, description, price, image, ...props}: ProductTyp
                 <div className={style.footer}>
                     <div className={style.action}>
                         <Button name={"Buy Now"}
-                                onClick={onClickHandler}
+                                onClick={() => {}}
                                 variant={"contained"}
                         />
                     </div>
                     <div className={style.cart}>
                         <Button name={"Add to cart"}
-                                onClick={()=>{}}
+                                onClick={onClickHandler}
                                 variant={"outlined"}
                         />
                     </div>
