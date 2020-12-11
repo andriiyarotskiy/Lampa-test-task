@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f8709ecef0fc5831e5fab126523fead2",
+    "revision": "665d294cec9de5a1243fcf718dda0f91",
     "url": "/mini-shop/index.html"
   },
   {
-    "revision": "7ddf4b7b4242efc43c84",
-    "url": "/mini-shop/static/css/main.4f8f58be.chunk.css"
+    "revision": "a50f368526cb7aa71142",
+    "url": "/mini-shop/static/css/main.ecb33c1e.chunk.css"
   },
   {
-    "revision": "3478d2e6fa6df06210c7",
-    "url": "/mini-shop/static/js/2.a9f4df9a.chunk.js"
+    "revision": "d970ba76419aff765585",
+    "url": "/mini-shop/static/js/2.622f0f4e.chunk.js"
   },
   {
     "revision": "0749163b59fbee32225059cb60c18af6",
-    "url": "/mini-shop/static/js/2.a9f4df9a.chunk.js.LICENSE.txt"
+    "url": "/mini-shop/static/js/2.622f0f4e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7ddf4b7b4242efc43c84",
-    "url": "/mini-shop/static/js/main.3c3d7b6b.chunk.js"
+    "revision": "a50f368526cb7aa71142",
+    "url": "/mini-shop/static/js/main.11696c57.chunk.js"
   },
   {
     "revision": "bc498b52d8c19dc88b87",
