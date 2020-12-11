@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import '../App.css';
 import {Route, Switch} from "react-router-dom";
 import {Header} from "./Header/Header";
@@ -26,6 +26,7 @@ export const App = () => {
     useEffect(() => {
         dispatch(setProductsToBasket(productsToLocalStorage))
     }, [dispatch])
+
 
 
     return (

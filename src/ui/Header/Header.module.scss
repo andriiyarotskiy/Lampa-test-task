@@ -61,6 +61,7 @@
       left: 0;
       bottom: 0;
     }
+
     @media (max-width: 450px) {
       font-size: 20px;
       line-height: 30px;
@@ -155,6 +156,34 @@
           font-size: 20px;
         }
       }
+    }
+  }
+}
+
+
+// Button login Google & FaceBook
+.Google_btn {
+  button {
+    width: 200px;
+  }
+}
+.FB_btn {
+  border-radius: 5px;
+  button {
+    width: 200px;
+    height: 44px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: none;
+    position: relative;
+    padding-left: 15px;
+    text-align: right;
+    border-radius: 5px;
+    i {
+      position: absolute;
+      left: 15px;
+      top: 13px;
+      font-size: 17px;
     }
   }
 }

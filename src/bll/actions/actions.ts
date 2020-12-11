@@ -22,7 +22,13 @@ export const clearBasket = () => {
 export const removeSingleProducts = (id: string) => {
     return {type: "basket/REMOVE-SINGLE-PRODUCTS", id} as const
 }
-
+export const setUserloginStatus = (isAuth: boolean) => {
+    return {type: "auth/SET-IS-USER-AUTH", isAuth} as const
+}
+export const setUserProfile = (user: any) => {
+    return {type: "auth/SET-USER-DATA", user} as const
+}
+//basketReducer
 export type BasketActionsTypes =
     ReturnType<typeof totalPrice> |
     ReturnType<typeof addToBasket> |
@@ -33,5 +39,8 @@ export type BasketActionsTypes =
     ReturnType<typeof removeSingleProducts>
 
 
-export type MainActionsTypes =
-    ReturnType<typeof setProducts>
+//mainReducer
+export type MainActionsTypes = ReturnType<typeof setProducts>
+//authReducer
+export type AuthActionsTypes = ReturnType<typeof setUserloginStatus> |
+    ReturnType<typeof setUserProfile>
