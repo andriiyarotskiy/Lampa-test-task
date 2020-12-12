@@ -7,13 +7,12 @@ import style from "./Header.module.scss"
 import logo from "../../assets/images/logo_watch.png"
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import Modal from "../common/Modal/Modal";
-import GoogleLogin, {GoogleLogout} from "react-google-login";
 import {loginTC, logoutTC} from "../../bll/authReducer";
-import FacebookLogin from 'react-facebook-login';
-import Button from "../common/Button/Button";
+import LoginHooks from "../common/login_logout_hooks/LoginHooks";
+import LogoutHooks from "../common/login_logout_hooks/LogoutHooks";
+import {saveState} from "../../utils/saveToLocalStorage";
 
-const client_google_id = "345999559557-l0djs7ot59j8914n1bp4mvkn08odsp4n.apps.googleusercontent.com"
-const client_facebook_id = "399813427801800"
+// const client_facebook_id = "399813427801800"
 
 export const Header = () => {
 
@@ -23,29 +22,40 @@ export const Header = () => {
     const isAuth = useSelector<AppRootStateType, boolean>(state => state.auth.isAuth)
     const user = useSelector<AppRootStateType, any>(state => state.auth.user)
     const dispatch = useDispatch()
-    //google Auth
-    const responseGoogle = (response: any): any => {
+    //google  Login
+
+    const onSuccess = (response: any): any => {
         if (response) {
             const {imageUrl, name} = response.profileObj
             dispatch(loginTC({imageUrl, name}))
             setModalActive(false)
+            // save user to localStorage
+            saveState('user', {imageUrl, name})
         }
     }
+    const onFailureLogin = (res: any) => {
+        console.log('[login Failed] res:', res)
+    }
 
-    const logout = () => {
+    //Google Logout
+    const onLogoutSuccess = () => {
         dispatch(logoutTC())
+        localStorage.removeItem('user')
+    }
+    const onFailure = () => {
+        console.log('Handle Failure cases')
     }
 
     //FACEBOOK
-    const responseFacebook = (response: any) => {
-        if (response) {
-            const name = response.name
-            const imageUrl = response.picture.data.url
-            dispatch(loginTC({name, imageUrl}))
-            setModalActive(false)
-        }
-    }
-
+    // const responseFacebook = (response: any) => {
+    //     if (response) {
+    //         const name = response.name
+    //         const imageUrl = response.picture.data.url
+    //         dispatch(loginTC({name, imageUrl}))
+    //         setModalActive(false)
+    //     }
+    // }
+    //
 
     return (
         <div className={style.header}>
@@ -58,21 +68,15 @@ export const Header = () => {
                         <span>WatchZone</span>
                     </Link>
                 </div>
-
                 {isAuth
-                    ? <div>
-                        <GoogleLogout
-                            clientId={"345999559557-l0djs7ot59j8914n1bp4mvkn08odsp4n.apps.googleusercontent.com"}
-                            // buttonText={'Logout'}
-                            onLogoutSuccess={logout}
-                            render={renderProps =>
-                                <Button variant={"contained"} onClick={renderProps.onClick} name={"Log out"}/>
-                                /*<button onClick={renderProps.onClick} className="btn btn-dark">Sign in</button>*/
-                            }
-                        />
-
-                        <span>{user.name}</span>
-                        <img style={{borderRadius: "15px"}} src={user.imageUrl} alt="" width="30" height="30"/>
+                    ? <div className={style.loginBlock}>
+                        <div className={style.userInfo}>
+                            <span>{user.name}</span>
+                            {user.imageUrl && <img style={{borderRadius: "15px"}} src={user.imageUrl} alt="img"/>}
+                        </div>
+                        <div className={style.google_btn}>
+                            <LogoutHooks onFailure={onFailure} onLogoutSuccess={onLogoutSuccess}/>
+                        </div>
                     </div>
                     : <Link to={""} className={style.signIn}
                             onClick={() => setModalActive(true)}
@@ -102,26 +106,8 @@ export const Header = () => {
             <Modal active={modalActive} setActive={setModalActive}>
                 <div>
                     {!isAuth && <div>
-                        <div className={style.Google_btn}>
-                            <GoogleLogin clientId={client_google_id}
-                                /*       buttonText="Login with Google"*/
-                                         onSuccess={responseGoogle}
-                                         onFailure={responseGoogle}
-                                         cookiePolicy={'single_host_origin'}
-                                         responseType='code,token'
-                                         isSignedIn={true}
-                            />
-                        </div>
-                        <div className={style.FB_btn}>
-                            <FacebookLogin
-                                appId={client_facebook_id}
-                                autoLoad={false}
-                                fields="name,email,picture"
-                                callback={responseFacebook}
-                                icon="fa-facebook"
-                                textButton={"Sign in with Facebook"}
-                                responseType={'Object'}
-                            />
+                        <div className={style.loginBlock}>
+                            <LoginHooks onSuccess={onSuccess} onFailure={onFailureLogin}/>
                         </div>
                     </div>
                     }

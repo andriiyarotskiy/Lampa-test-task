@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import './App.css';
-import {saveState} from "./ui/common/saveToLocalStorage";
+import {saveState} from "./utils/saveToLocalStorage";
 import {useSelector} from "react-redux";
 import {AppRootStateType} from "./bll/store";
 import {App} from './ui/App';
