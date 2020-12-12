@@ -7,10 +7,11 @@ import style from "./Header.module.scss"
 import logo from "../../assets/images/logo_watch.png"
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import Modal from "../common/Modal/Modal";
-import {loginTC, logoutTC} from "../../bll/authReducer";
+import {loginTC} from "../../bll/authReducer";
 import LoginHooks from "../common/login_logout_hooks/LoginHooks";
 import LogoutHooks from "../common/login_logout_hooks/LogoutHooks";
-import {saveState} from "../../utils/saveToLocalStorage";
+import UseLocalStorage from "../../utils/useLocalStorage";
+import {setUserloginStatus} from "../../bll/actions/actions";
 
 // const client_facebook_id = "399813427801800"
 
@@ -24,13 +25,15 @@ export const Header = () => {
     const dispatch = useDispatch()
     //google  Login
 
+
+    const [userData, setUserData] = UseLocalStorage("user", user)
+
     const onSuccess = (response: any): any => {
         if (response) {
             const {imageUrl, name} = response.profileObj
             dispatch(loginTC({imageUrl, name}))
             setModalActive(false)
-            // save user to localStorage
-            saveState('user', {imageUrl, name})
+            setUserData(name)
         }
     }
     const onFailureLogin = (res: any) => {
@@ -39,7 +42,7 @@ export const Header = () => {
 
     //Google Logout
     const onLogoutSuccess = () => {
-        dispatch(logoutTC())
+        dispatch(setUserloginStatus(false))
         localStorage.removeItem('user')
     }
     const onFailure = () => {

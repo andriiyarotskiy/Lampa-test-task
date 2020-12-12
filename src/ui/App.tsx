@@ -6,35 +6,29 @@ import {Basket} from "./Basket/Basket";
 import {Main} from "./Main/Main";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../bll/store";
-import {restoreState} from "../utils/saveToLocalStorage";
 import {setProductsToBasket} from "../bll/actions/actions";
 import {selectProductsWithTotal} from '../bll/selectors/re-select';
 import style from "./App.module.scss"
-import {loginTC} from "../bll/authReducer";
+import UseLocalStorage from "../utils/useLocalStorage";
 
 
 export const App = () => {
 
 
     const productsWithTotal = useSelector<AppRootStateType, any>(selectProductsWithTotal)
-    const {user, isAuth} = useSelector<AppRootStateType, any>(state => state.auth)
 
     const dispatch = useDispatch()
 
 
-    const productsFromLocalStorage = restoreState("productToStorage", productsWithTotal)
     // Restore from local storage
-    const userFromLS = restoreState("user", user)
+    const [value] = UseLocalStorage("productToStorage", productsWithTotal)
 
     useEffect(() => {
-        dispatch(setProductsToBasket(productsFromLocalStorage))
-        if (isAuth) {
-            dispatch(loginTC(userFromLS))
-        }
+        dispatch(setProductsToBasket(value))
         return () => {
             localStorage.removeItem('user')
         }
-    }, [dispatch])
+    }, [dispatch, value])
 
 
     return (
