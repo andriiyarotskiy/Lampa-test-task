@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "665d294cec9de5a1243fcf718dda0f91",
+    "revision": "6da52d1bf64139775d29d0b638c6c104",
     "url": "/mini-shop/index.html"
   },
   {
-    "revision": "a50f368526cb7aa71142",
-    "url": "/mini-shop/static/css/main.ecb33c1e.chunk.css"
+    "revision": "9aa89c326b55bf12dbf5",
+    "url": "/mini-shop/static/css/main.f44236ff.chunk.css"
   },
   {
-    "revision": "d970ba76419aff765585",
-    "url": "/mini-shop/static/js/2.622f0f4e.chunk.js"
+    "revision": "cebebc30d8d2862bd660",
+    "url": "/mini-shop/static/js/2.154491af.chunk.js"
   },
   {
     "revision": "0749163b59fbee32225059cb60c18af6",
-    "url": "/mini-shop/static/js/2.622f0f4e.chunk.js.LICENSE.txt"
+    "url": "/mini-shop/static/js/2.154491af.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a50f368526cb7aa71142",
-    "url": "/mini-shop/static/js/main.11696c57.chunk.js"
+    "revision": "9aa89c326b55bf12dbf5",
+    "url": "/mini-shop/static/js/main.73526bac.chunk.js"
   },
   {
     "revision": "bc498b52d8c19dc88b87",
@@ -30,6 +30,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "7099b817e117b88fed1604b8d10ce96a",
     "url": "/mini-shop/static/media/SE.7099b817.svg"
+  },
+  {
+    "revision": "4e91abadbf13237ef458fc91f36f3489",
+    "url": "/mini-shop/static/media/google_icon_131222.4e91abad.svg"
   },
   {
     "revision": "277e506023bc6a740bb88d40ab437430",

@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/mini-shop/static/css/main.ecb33c1e.chunk.css",
-    "main.js": "/mini-shop/static/js/main.11696c57.chunk.js",
-    "main.js.map": "/mini-shop/static/js/main.11696c57.chunk.js.map",
+    "main.css": "/mini-shop/static/css/main.f44236ff.chunk.css",
+    "main.js": "/mini-shop/static/js/main.73526bac.chunk.js",
+    "main.js.map": "/mini-shop/static/js/main.73526bac.chunk.js.map",
     "runtime-main.js": "/mini-shop/static/js/runtime-main.b4a5d8b1.js",
     "runtime-main.js.map": "/mini-shop/static/js/runtime-main.b4a5d8b1.js.map",
-    "static/js/2.622f0f4e.chunk.js": "/mini-shop/static/js/2.622f0f4e.chunk.js",
-    "static/js/2.622f0f4e.chunk.js.map": "/mini-shop/static/js/2.622f0f4e.chunk.js.map",
+    "static/js/2.154491af.chunk.js": "/mini-shop/static/js/2.154491af.chunk.js",
+    "static/js/2.154491af.chunk.js.map": "/mini-shop/static/js/2.154491af.chunk.js.map",
     "index.html": "/mini-shop/index.html",
-    "precache-manifest.717794f121f1d86c271c5ee9eb046364.js": "/mini-shop/precache-manifest.717794f121f1d86c271c5ee9eb046364.js",
+    "precache-manifest.5f7f2917609cf392730e16068e02f720.js": "/mini-shop/precache-manifest.5f7f2917609cf392730e16068e02f720.js",
     "service-worker.js": "/mini-shop/service-worker.js",
-    "static/css/main.ecb33c1e.chunk.css.map": "/mini-shop/static/css/main.ecb33c1e.chunk.css.map",
-    "static/js/2.622f0f4e.chunk.js.LICENSE.txt": "/mini-shop/static/js/2.622f0f4e.chunk.js.LICENSE.txt",
+    "static/css/main.f44236ff.chunk.css.map": "/mini-shop/static/css/main.f44236ff.chunk.css.map",
+    "static/js/2.154491af.chunk.js.LICENSE.txt": "/mini-shop/static/js/2.154491af.chunk.js.LICENSE.txt",
     "static/media/Clorfit Nav.svg": "/mini-shop/static/media/Clorfit Nav.14b95cb6.svg",
     "static/media/SE.svg": "/mini-shop/static/media/SE.7099b817.svg",
+    "static/media/google_icon_131222.svg": "/mini-shop/static/media/google_icon_131222.4e91abad.svg",
     "static/media/i3-removebg-preview 1.svg": "/mini-shop/static/media/i3-removebg-preview 1.277e5060.svg",
     "static/media/noise fit.svg": "/mini-shop/static/media/noise fit.47fe154e.svg",
     "static/media/noise pro 2.svg": "/mini-shop/static/media/noise pro 2.771c5a1b.svg",
@@ -22,8 +23,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b4a5d8b1.js",
-    "static/js/2.622f0f4e.chunk.js",
-    "static/css/main.ecb33c1e.chunk.css",
-    "static/js/main.11696c57.chunk.js"
+    "static/js/2.154491af.chunk.js",
+    "static/css/main.f44236ff.chunk.css",
+    "static/js/main.73526bac.chunk.js"
   ]
 }
